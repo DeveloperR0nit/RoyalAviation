@@ -92,14 +92,14 @@ a {
 }
 .primary-btn:hover i {
   display: block;
-  animation: plane 0.5s linear infinite;
+  animation: plane 0.5s linear;
 }
 @keyframes plane {
   0% {
-    transform: translateX(0);
+    left: 0%;
   }
   100% {
-    transform: translateX(280.35px);
+    left: 100%;
   }
 }
 .primary-btn > svg {
@@ -118,6 +118,67 @@ a {
   background: var(--bg-dark);
   text-transform: capitalize;
 }
+.secondary-btn-wrapper {
+  border-radius: 50px;
+  transition: 0.5s linear;
+}
+.secondary-btn-wrapper:hover {
+  background: var(--text-color);
+  padding: 2px;
+  filter: drop-shadow(0 0 8px var(--primary-color));
+}
+.secondary-btn {
+  font-family: var(--arlita);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--text-color);
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  padding: 21px 35px;
+  background: var(--body-bg);
+  text-transform: capitalize;
+}
+.secondary-btn > span {
+  border-radius: 50px;
+  position: relative;
+  transition: 0.5s linear all;
+  z-index: 2;
+}
+.secondary-btn svg {
+  margin-left: 21px;
+}
+.secondary-btn path {
+  transition: 0.5s linear;
+}
+.secondary-btn::after {
+  content: "";
+  background: var(--primary-color);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  transition: 0.5s all linear;
+}
+.secondary-btn:hover::after {
+  width: 100%;
+}
+.secondary-btn:hover > span {
+  color: var(--body-bg);
+}
+.secondary-btn:hover path {
+  fill: var(--body-bg);
+}
+.secondary-btn i {
+  position: absolute;
+  left: 0px;
+  display: none;
+}
+.secondary-btn:hover i {
+  display: block;
+  animation: plane 0.5s linear;
+}
 .title-2 {
   font-family: var(--arlita), sans-serif;
   font-weight: 400;
@@ -134,7 +195,7 @@ Navbar
 ===============*/
 
 .nav-logo {
-  width: 120px;
+  width: 100px;
 }
 .active {
   position: relative;
@@ -201,27 +262,10 @@ Navbar
 /* ===========
 Navbar Responsive
 ============== */
-@media screen and (max-width: 992px) {
-  @keyframes plane {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(248.83px);
-    }
-  }
-}
+
 @media screen and (max-width: 576px) {
   .nav-logo {
-    width: 90px;
-  }
-  @keyframes plane {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(195.3px);
-    }
+    width: 80px;
   }
 }
 
@@ -310,10 +354,10 @@ Predestined Section
     transparent,
     #000000
   );
-  z-index: 1;
+  z-index: -1;
 }
 .predestined-wrapper {
-  box-shadow: 0 0 119.5px #5f4a0a;
+  box-shadow: 0 0 45px #5f4a0a;
   padding: 3.177vw 2.917vw;
   background: var(--bg-dark);
   border-radius: 40px;
@@ -379,12 +423,17 @@ Predestined Section
   border: 1px solid rgba(241, 226, 140, 51%);
   border-radius: 10px;
   position: relative;
+  background: #0f0f0c;
+  transition: 0.5s linear all;
+}
+.testimonial-card:hover{
+  filter: drop-shadow(0 0 5px var(--primary-color));
 }
 .testimonial-card::after {
   content: "";
   height: 50px;
   width: 50px;
-  background: url("./assests/star.png");
+  background: url("./assests/star.png") no-repeat center/cover;
   position: absolute;
   top: 0;
   right: 0;
@@ -422,13 +471,69 @@ Predestined Section
   font-size: 18px;
   margin-bottom: 0;
 }
+.user-review-card {
+  background: #12110a;
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px solid #27220d;
+  transition: 0.5s linear all;
+}
+.user-review-card:hover {
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+.user-review-card-content {
+  background: var(--body-bg);
+  border-radius: 15px;
+  padding: 30px 42px;
+  position: relative;
+}
+.user-review-card-content::before {
+  content: "";
+  height: 3px;
+  width: 5.263vw;
+  background: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 42px;
+  filter: drop-shadow(0 0 8px var(--primary-color));
+}
+.user-review-card-content > p {
+  font-family: var(--clash-grotesk-regular), sans-serif;
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+.user-review-card .profile-pic {
+  width: 56px;
+  height: 56px;
+  margin-right: 10px;
+}
+.user-review-card .profile-pic > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.user-review-card .profile-details > h5 {
+  font-family: var(--clash-grotesk-medium), sans-serif;
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.user-review-card .profile-details > p {
+  font-family: var(--clash-grotesk-regular), sans-serif;
+  font-size: 14px;
+  color: var(--text-color);
+  text-transform: capitalize;
+}
 
 /* ============================
 Predestined Section Responsive
 ===============================*/
+
 @media screen and (max-width: 992px) {
   .testimonial-content {
-    padding: 70px 2.708vw 70px;
+    padding: 70px 2.708vw 30px;
   }
   .testimonial-img {
     max-width: 450px;
@@ -441,6 +546,16 @@ Predestined Section Responsive
   }
 }
 @media screen and (max-width: 576px) {
+  .secondary-btn {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+  .secondary-btn svg {
+    margin-left: 10px;
+  }
+  .predestined-sec {
+    padding: 100px 0;
+  }
   .predestined-wrapper {
     padding: 0;
   }
@@ -474,5 +589,24 @@ Predestined Section Responsive
   }
   .testimonial-content p {
     font-size: 16px;
+  }
+  .user-review-card {
+    padding: 8px;
+  }
+  .user-review-card-content {
+    padding: 20px 15px;
+  }
+  .user-review-card-content p {
+    font-size: 14px;
+  }
+  .user-review-card .profile-pic {
+    width: 45px;
+    height: 45px;
+  }
+  .user-review-card .profile-details > h5 {
+    font-size: 16px;
+  }
+  .user-review-card .profile-details > p {
+    font-size: 12px;
   }
 }
