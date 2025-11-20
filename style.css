@@ -26,7 +26,9 @@
   --clash-grotesk-medium: clash-grotesk-medium;
 }
 body {
-  background: var(--body-bg);
+  background: url("./assests/body-bg-img.png") repeat-y center/cover
+    rgba(0, 0, 0, 0.9);
+  background-blend-mode: darken;
 }
 .container {
   max-width: 1571px !important;
@@ -115,7 +117,6 @@ a {
   width: 100%;
   height: 100%;
   color: var(--text-color);
-  background: var(--bg-dark);
   text-transform: capitalize;
 }
 .secondary-btn-wrapper {
@@ -138,6 +139,8 @@ a {
   padding: 21px 35px;
   background: var(--body-bg);
   text-transform: capitalize;
+  display: flex;
+  align-items: center;
 }
 .secondary-btn > span {
   border-radius: 50px;
@@ -189,11 +192,28 @@ a {
 .title-2 > span {
   color: var(--primary-color);
 }
+.subtitle {
+  border-radius: 16px;
+}
+.subtitle > span {
+  padding: 14px 58px;
+  border-radius: 16px;
+  font-family: var(--clash-grotesk-regular), sans-serif;
+  background: rgba(0, 0, 0, 0.9);
+}
 
 /*=============
 Navbar
 ===============*/
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--body-bg);
+  z-index: 4;
+}
 .nav-logo {
   width: 100px;
 }
@@ -274,10 +294,13 @@ Banner Section
 ===============*/
 
 .banner-sec {
-  min-height: 100vh;
+  min-height: calc(100vh + 96px);
   background: url("./assests/banner-bg.png") no-repeat center/cover;
+  background-attachment: fixed;
   color: var(--text-color);
   position: relative;
+  padding-top: 96px;
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 .banner-sec::after {
   content: "";
@@ -292,7 +315,7 @@ Banner Section
 }
 .banner-wrapper > p {
   max-width: 661px;
-  margin: 60px 0 88px;
+  margin: 40px 0 51px;
   font-size: 22px;
   font-family: var(--clash-grotesk-regular), sans-serif;
 }
@@ -317,6 +340,10 @@ Banner Responsive
   }
 }
 @media screen and (max-width: 576px) {
+  .banner-sec {
+    padding-top: 80px;
+    min-height: calc(100vh + 80px);
+  }
   .title-1 {
     font-size: 40px;
   }
@@ -330,15 +357,200 @@ Banner Responsive
   }
 }
 
+/* ====================
+Video Section
+=======================*/
+
+.video-sec {
+  padding: 75px 0;
+}
+.video-sec::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  z-index: -1;
+}
+.video-sec .subtitle {
+  margin: auto;
+}
+.video-sec .title-2 {
+  max-width: 901px;
+  text-align: center;
+  margin: 25px auto 55px;
+}
+.video-wrapper {
+  max-width: 1204px;
+  padding: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  border-radius: 30px;
+  margin: auto;
+  transition: 0.5s linear all;
+}
+.video-wrapper:hover {
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+.video-content {
+  padding: 25px;
+  border-radius: 30px;
+  background: rgb(8, 8, 8);
+}
+.video-sec img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.video-sec .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid white;
+  backdrop-filter: blur(5px);
+  transition: 0.5s linear all;
+}
+.video-sec .play-btn:hover {
+  filter: drop-shadow(0 0 5px white);
+  transform: scale(1.2) translate(-40%, -40%);
+}
+.video-sec .play-icon {
+  width: 40px;
+  transform: translateX(3px);
+}
+
+/* =========================
+Video Section Responsive
+=========================== */
+
+@media screen and (max-width: 576px) {
+  .subtitle > span {
+    padding: 10px 30px !important;
+  }
+  .video-content {
+    padding: 20px;
+  }
+  .video-sec .play-btn {
+    width: 60px;
+    height: 60px;
+  }
+  .video-sec .play-icon {
+    width: 26px;
+  }
+}
+
+/* ======================
+Dream Come True Section
+========================= */
+.dream-come-true-sec {
+  padding: 75px 0;
+}
+.dream-come-true-sec::before {
+  content: "";
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 88px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+}
+.dream-come-true-sec::after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 115px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+}
+.dream-come-true-sec .subtitle {
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+.dream-come-true-sec .title-2 {
+  max-width: 879px;
+  margin: 30px auto;
+  text-align: center;
+}
+.dream-come-true-sec .title-desc{
+  max-width: 479px;
+  text-align: center;
+  text-transform: capitalize;
+  margin: auto;
+  margin-bottom: 91px;
+  color: var(--text-color);
+  font-family: var(--clash-grotesk-regular), sans-serif;
+  font-size: 22px;
+}
+.dream-come-true-sec .card{
+  border-radius: 26px 26px;
+  background-color: black;
+}
+.dream-come-true-sec .card-img > img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+}
+.dream-come-true-sec .card-img{
+  border-radius: 26px;
+}
+.dream-come-true-sec .card-details{
+  border: 1px solid var(--primary-color);
+  border-radius: 26px;
+  padding-top: 35px;
+  color: var(--text-color);
+  text-align: center;
+}
+.dream-come-true-sec .plane-name{
+  font-family: var(--arlita), sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.dream-come-true-sec .plane-desc{
+  font-family: var(--clash-grotesk-regular), sans-serif;
+  font-size: 22px;
+  margin-top: 10px;
+}
+.dream-come-true-sec .secondary-btn-wrapper2{
+  border: ;
+}
+.dream-come-true-sec .secondary-btn-wrapper{
+  border-radius: 33px;
+}
+.dream-come-true-sec .secondary-btn{
+  padding: 16px 26px;
+  font-size: 22px;
+  border-radius: 33px;
+}
+.dream-come-true-sec .secondary-btn svg {
+    margin-left: 11px;
+}
+
 /* ================
 Predestined Section
 ================== */
 
 .predestined-sec {
-  border-radius: 40px;
-  background: url("./assests/body-bg-img.png") repeat-y center/cover
-    rgba(0, 0, 0, 0.9);
-  background-blend-mode: darken;
   position: relative;
   overflow: hidden;
   padding: 135px 0;
@@ -381,16 +593,10 @@ Predestined Section
   border-radius: 40px;
 }
 .predestined-subtitle {
-  border-radius: 16px;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.predestined-subtitle > span {
-  padding: 14px 58px;
-  border-radius: 16px;
-  font-family: var(--clash-grotesk-regular), sans-serif;
 }
 .testimonial-content {
   padding: 121px 2.708vw 76px;
@@ -407,13 +613,8 @@ Predestined Section
   border-radius: 50%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
 }
-.testimonial-subtitle {
-  border-radius: 16px;
-}
 .testimonial-subtitle > span {
   padding: 10px 42.5px;
-  border-radius: 16px;
-  font-family: var(--clash-grotesk-regular), sans-serif;
 }
 .predestined-sec .title-2 {
   margin: 50px 0;
@@ -426,7 +627,7 @@ Predestined Section
   background: #0f0f0c;
   transition: 0.5s linear all;
 }
-.testimonial-card:hover{
+.testimonial-card:hover {
   filter: drop-shadow(0 0 5px var(--primary-color));
 }
 .testimonial-card::after {
@@ -564,12 +765,6 @@ Predestined Section Responsive
   }
   .title-2 {
     font-size: 35px;
-  }
-  .predestined-subtitle > span {
-    padding: 10px 30px;
-  }
-  .testimonial-subtitle > span {
-    padding: 10px 30px;
   }
   .testimonial-img {
     margin-bottom: 40px;
