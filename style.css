@@ -553,6 +553,7 @@ Dream Come True Section
   width: 0;
   height: 0;
   background: var(--primary-color);
+  filter: drop-shadow(0 0 8px var(--primary-color));
   z-index: -1;
   border-radius: 26px;
 }
