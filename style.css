@@ -1,4 +1,8 @@
 @font-face {
+  font-family: clash-display-regular;
+  src: url("./assests/fonts/ClashDisplay-Regular.otf");
+}
+@font-face {
   font-family: clash-display-medium;
   src: url("./assests/fonts/ClashDisplay-Medium.otf");
 }
@@ -24,6 +28,7 @@
   --primary-color: #ddca67;
   --text-color: #ffffff;
   --clash-medium: clash-display-medium;
+  --clash-regular: clash-display-regular;
   --arlita: arlita;
   --clash-grotsek-light: clash-grotsek-light;
   --clash-grotesk-regular: clash-grotesk-regular;
@@ -1092,6 +1097,204 @@ Predestined Section Responsive
   }
 }
 
+/*====================
+ Nothing Section
+ =====================*/
+
+.nothing-sec {
+  padding: 75px 0;
+}
+.nothing-img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.nothing-sec .subtitle {
+  border-radius: 10px;
+}
+.nothing-sec .subtitle > span {
+  font-size: 18px;
+  padding: 7px 42px;
+  border-radius: 10px;
+  background: var(--body-bg);
+}
+.nothing-heading {
+  color: var(--primary-color);
+  font-family: var(--arlita), sans-serif;
+  font-size: 60px;
+  line-height: 0.8;
+  margin: 50px 0 25px;
+}
+.nothing-heading > span {
+  font-family: var(--clash-grotesk-medium), sans-serif;
+  font-size: 200px;
+}
+.nothing-title-desc {
+  font-family: var(--clash-grotesk-regular), sans-serif;
+  color: var(--text-color);
+  font-size: 30px;
+  max-width: 527px;
+  text-transform: capitalize;
+  margin-bottom: 65px;
+}
+.nothing-sub-box {
+  background: #080806;
+  border: 2px solid #27220d;
+  border-radius: 3.289vw;
+  padding: 15px 44px 64px;
+  filter: drop-shadow(0 0 15px rgba(202, 184, 63, 0.2));
+}
+.nothing-dec-1 {
+  width: 226px;
+  margin: auto;
+}
+.nothing-dec-1 > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nothing-sub-box-title {
+  font-family: var(--arlita), sans-serif;
+  font-size: 40px;
+  color: var(--text-color);
+  max-width: 435px;
+  margin: 10px auto 37px;
+  line-height: 1.2;
+}
+.nothing-sub-box-title > span {
+  color: var(--primary-color);
+}
+.nothing-sub-box input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(221, 202, 103, 50%);
+  border-radius: 16px;
+  color: var(--text-color);
+  font-family: var(--clash-regular), sans-serif;
+  font-size: 16px;
+  padding: 20px;
+  margin-bottom: 31px;
+}
+.nothing-sub-box input::placeholder {
+  color: var(--text-color);
+}
+.nothing-sub-box input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+
+.nothing-sub-box label {
+  color: var(--text-color);
+  font-size: 20px;
+  font-family: var(--clash-medium), sans-serif;
+  margin: 0 0 14px 20px;
+}
+.nothing-sub-box #ph-no {
+  margin-bottom: 49px;
+}
+.nothing-sub-box .secondary-btn-wrapper {
+  border-radius: 33px;
+  border: none;
+  position: relative;
+}
+.nothing-sub-box .secondary-btn-wrapper::after {
+  position: absolute;
+  bottom: -21px;
+  right: -33px;
+  transform: rotate(-6.46deg);
+  content: "";
+  width: 45.63px;
+  height: 77.43px;
+  background: url("./assests/nothing-sub-box-dec-2.png") no-repeat center/cover;
+}
+.nothing-sub-box .secondary-btn {
+  border-radius: 33px;
+  padding: 15px 31px;
+  font-size: 24px;
+  background: #080806;
+}
+
+/* ====================
+Nothing Section Responsive
+======================= */
+@media screen and (max-width: 1200px) {
+  .nothing-sec .subtitle {
+    margin: auto;
+  }
+  .nothing-heading {
+    text-align: center;
+  }
+  .nothing-title-desc {
+    margin: 0 auto 65px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  .nothing-heading {
+    font-size: 50px;
+  }
+  .nothing-heading > span {
+    font-size: 180px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nothing-heading > span {
+    font-size: 160px;
+  }
+  .nothing-title-desc {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .nothing-sec {
+    padding: 45px 0;
+  }
+  .nothing-sec .subtitle > span {
+    font-size: 12px;
+    padding: 7px 23px !important;
+  }
+  .nothing-heading {
+    font-size: 35px;
+    margin: 25px 0;
+  }
+  .nothing-heading > span {
+    font-size: 90px;
+  }
+  .nothing-title-desc {
+    font-size: 18px;
+    margin: 0 auto 50px;
+    max-width: 320px;
+  }
+  .nothing-sub-box {
+    padding: 15px 20px 50px;
+  }
+  .nothing-dec-1 {
+    width: 175px;
+  }
+  .nothing-sub-box-title {
+    font-size: 25px;
+    text-align: center;
+    margin: 10px auto 25px;
+  }
+  .nothing-sub-box label {
+    font-size: 16px;
+  }
+  .nothing-sub-box input {
+    padding: 13px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .nothing-sub-box input::placeholder {
+    font-size: 14px;
+  }
+  .nothing-sub-box label {
+    margin: 0 0 10px 10px;
+  }
+  .nothing-sub-box #ph-no {
+    margin-bottom: 40px;
+  }
+}
+
 /*===================
 Footer Section 
 =====================*/
@@ -1100,6 +1303,7 @@ Footer Section
   padding: 66px 0;
   position: relative;
   background: var(--body-bg);
+  margin-top: 75px;
 }
 .footer-sec::before {
   content: "";
@@ -1308,6 +1512,7 @@ Footer Section
 /*====================
 Footer Responsive
 ======================*/
+
 @media screen and (max-width: 1200px) {
   .footer-form-card #email {
     width: 60%;
@@ -1334,16 +1539,20 @@ Footer Responsive
   .footer-form-card {
     margin: auto;
   }
+  .footer-form-card .form-card-heading {
+    margin-left: 30px;
+  }
   .footer-form-card .socials-row {
-    margin: 40px 0;
+    margin: 40px 0 40px 30px;
   }
   .footer-form-card .service-locations {
-    margin-left: 0;
+    margin-left: 30px;
   }
 }
 @media screen and (max-width: 576px) {
   .footer-sec {
     padding: 45px 0;
+    margin-top: 45px;
   }
   .footer-logo {
     width: 100px;
@@ -1362,6 +1571,7 @@ Footer Responsive
   }
   .footer-form-card .form-card-heading {
     font-size: 18px;
+    margin: 0 0 20px 20px;
   }
   .footer-form-card #email {
     font-size: 14px;
@@ -1375,7 +1585,7 @@ Footer Responsive
     width: 35%;
   }
   .footer-form-card .socials-row {
-    margin: 25px 0;
+    margin: 25px 0 25px 20px;
   }
   .footer-form-card .socials-row > li {
     height: 35px;
@@ -1389,6 +1599,7 @@ Footer Responsive
   }
   .footer-form-card .service-locations {
     font-size: 16px;
+    margin-left: 20px;
   }
   .footer-rights-text {
     font-size: 14px;
