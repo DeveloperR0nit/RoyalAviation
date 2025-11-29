@@ -198,6 +198,8 @@ a {
   font-size: 60px;
   color: var(--text-color);
   text-transform: capitalize;
+  margin: 40px auto 30px;
+  text-align: center;
 }
 .title-2 > span {
   color: var(--primary-color);
@@ -219,6 +221,7 @@ a {
   text-align: center;
   margin: auto;
   text-transform: capitalize;
+  margin-bottom: 91px;
 }
 .title-3 {
   font-family: var(--arlita), sans-serif;
@@ -405,7 +408,6 @@ Video Section
 }
 .video-sec .title-2 {
   max-width: 901px;
-  text-align: center;
   margin: 40px auto 55px;
 }
 .video-wrapper {
@@ -526,12 +528,9 @@ Dream Come True Section
 }
 .dream-come-true-sec .title-2 {
   max-width: 879px;
-  margin: 40px auto 30px;
-  text-align: center;
 }
 .dream-come-true-sec .title-desc {
   max-width: 479px;
-  margin-bottom: 91px;
 }
 .dream-come-true-sec .card {
   border-radius: 26px 26px;
@@ -620,7 +619,7 @@ Dream Come True Section
 .dream-come-true-sec .card-details .secondary-btn-wrapper {
   border-radius: 33px;
   margin: auto;
-  width: 39%;
+  width: 37%;
 }
 .dream-come-true-sec .card-details .secondary-btn {
   padding: 16px 0;
@@ -636,6 +635,12 @@ Dream Come True Section
 Dream Come True Responsive
 ======================= */
 
+
+@media screen and (max-width: 1580px) {
+  .dream-come-true-sec .card-details .secondary-btn-wrapper {
+    width: 39%;
+  }
+}
 @media screen and (max-width: 1400px) {
   .dream-come-true-sec .plane-desc {
     margin: 9px 0 19px;
@@ -658,7 +663,7 @@ Dream Come True Responsive
   }
   .title-desc {
     font-size: 16px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
   }
   .dream-come-true-sec .card-img {
     height: 260px;
@@ -739,13 +744,8 @@ Services Section
     transparent
   );
 }
-.service-sec .title-2 {
-  text-align: center;
-  margin: 40px 0 30px;
-}
 .service-sec .title-desc {
   max-width: 639px;
-  margin-bottom: 91px;
 }
 .service-sec .sticky-card {
   background: #080806;
@@ -762,7 +762,7 @@ Services Section
   background: var(--primary-color);
   position: absolute;
   top: 0;
-  left: 80px;
+  left: 65px;
   filter: drop-shadow(0 0 8px var(--primary-color));
 }
 .service-sec .secondary-subtitle {
@@ -817,6 +817,11 @@ Services Section Responsive
     margin: auto;
     padding: 50px 5.263vw;
   }
+  .service-sec .sticky-card::before {
+    width: 90px;
+    left: 6.552vw;
+  }
+
   .service-sec .sticky-card-img {
     margin-bottom: 40px;
   }
@@ -830,6 +835,13 @@ Services Section Responsive
 @media screen and (max-width: 576px) {
   .service-sec {
     padding: 45px 0;
+  }
+  .service-sec .title-desc {
+    margin-bottom: 50px;
+  }
+  .service-sec .sticky-card::before {
+    left: 8%;
+    width: 80px;
   }
   .title-3 {
     font-size: 25px;
@@ -1036,6 +1048,10 @@ Predestined Section Responsive
     max-width: 450px;
     margin-bottom: 40px;
   }
+  .user-review-card-content::before {
+    width: 60px;
+    left: 42px;
+  }
 }
 @media screen and (max-width: 576px) {
   .predestined-sec {
@@ -1043,7 +1059,7 @@ Predestined Section Responsive
   }
   .secondary-btn {
     font-size: 16px !important;
-    padding: 15px 20px !important;
+    padding: 10px 15px !important;
   }
   .secondary-btn svg {
     margin-left: 10px;
@@ -1078,6 +1094,9 @@ Predestined Section Responsive
   }
   .user-review-card {
     padding: 8px;
+  }
+  .user-review-card-content::before {
+    left: 20px;
   }
   .user-review-card-content {
     padding: 20px 15px;
@@ -1129,13 +1148,11 @@ Predestined Section Responsive
   font-family: var(--clash-grotesk-medium), sans-serif;
   font-size: 200px;
 }
-.nothing-title-desc {
-  font-family: var(--clash-grotesk-regular), sans-serif;
-  color: var(--text-color);
-  font-size: 30px;
+.nothing-sec .title-desc {
   max-width: 527px;
-  text-transform: capitalize;
-  margin-bottom: 65px;
+  margin-left: 0;
+  text-align: left;
+  font-size: 30px;
 }
 .nothing-sub-box {
   background: #080806;
@@ -1217,6 +1234,8 @@ Predestined Section Responsive
 /* ====================
 Nothing Section Responsive
 ======================= */
+
+
 @media screen and (max-width: 1200px) {
   .nothing-sec .subtitle {
     margin: auto;
@@ -1224,9 +1243,10 @@ Nothing Section Responsive
   .nothing-heading {
     text-align: center;
   }
-  .nothing-title-desc {
-    margin: 0 auto 65px;
+  .nothing-sec .title-desc {
+    margin-left: auto;
     text-align: center;
+    font-size: 25px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -1241,7 +1261,7 @@ Nothing Section Responsive
   .nothing-heading > span {
     font-size: 160px;
   }
-  .nothing-title-desc {
+  .nothing-sec .title-desc {
     font-size: 25px;
   }
 }
@@ -1255,14 +1275,13 @@ Nothing Section Responsive
   }
   .nothing-heading {
     font-size: 35px;
-    margin: 25px 0;
+    margin: 30px 0 15px;
   }
   .nothing-heading > span {
     font-size: 90px;
   }
-  .nothing-title-desc {
+  .nothing-sec .title-desc {
     font-size: 18px;
-    margin: 0 auto 50px;
     max-width: 320px;
   }
   .nothing-sub-box {
@@ -1571,7 +1590,7 @@ Footer Responsive
   }
   .footer-form-card .form-card-heading {
     font-size: 18px;
-    margin: 0 0 20px 20px;
+    margin: 0 0 10px 20px;
   }
   .footer-form-card #email {
     font-size: 14px;
@@ -1585,7 +1604,7 @@ Footer Responsive
     width: 35%;
   }
   .footer-form-card .socials-row {
-    margin: 25px 0 25px 20px;
+    margin: 15px 0 15px 20px;
   }
   .footer-form-card .socials-row > li {
     height: 35px;
