@@ -247,14 +247,17 @@ Navbar
   z-index: 4;
 }
 .nav-logo {
-  width: 100px;
+  width: 110px;
 }
 .active {
   position: relative;
 }
-
+.offcanvas {
+  flex-direction: row;
+}
 .nav-item {
-  margin-right: 44px;
+  margin-right: 60px;
+  font-size: 20px;
 }
 .nav-item:last-child {
   margin-right: 0;
@@ -315,6 +318,64 @@ Navbar
 Navbar Responsive
 ============== */
 
+@media screen and (max-width: 1200px) {
+  .offcanvas {
+    flex-direction: column;
+    background-color: var(--body-bg);
+    padding-top: 100px;
+  }
+  .navbar-toggler{
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 9999;
+    height: 24px;
+    transition: 0.5s linear;
+  }
+  .navbar-toggler::before{
+    content: '';
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    transition: 0.5s linear;
+  }
+  .navbar-toggler::after{
+    content: '';
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    transition: 0.5s linear;
+  }
+  .navbar-toggler.open::before{
+    transform: translate(0, 8px) rotate(-45deg);
+  }
+  .navbar-toggler.open::after{
+    transform: translate(0, -8px) rotate(45deg);
+  }
+  .navbar-toggler.open > .navbar-toggler-icon{
+    opacity: 0;
+  }
+  .navbar-toggler-icon {
+    background: none;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    transition: 0.5s linear;
+  }
+  .nav-item {
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .nav-btns{
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 576px) {
   .nav-logo {
     width: 80px;
@@ -634,7 +695,6 @@ Dream Come True Section
 /* ====================
 Dream Come True Responsive
 ======================= */
-
 
 @media screen and (max-width: 1580px) {
   .dream-come-true-sec .card-details .secondary-btn-wrapper {
@@ -1234,7 +1294,6 @@ Predestined Section Responsive
 /* ====================
 Nothing Section Responsive
 ======================= */
-
 
 @media screen and (max-width: 1200px) {
   .nothing-sec .subtitle {
